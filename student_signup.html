@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Sign Up - Placement Portal</title>
+  <link rel="stylesheet" href="student_signup.css">
+</head>
+<body>
+  <div class="signup-container">
+    <h2> Student Sign Up</h2>
+    <form class="signup-form">
+      <label>Full Name *</label>
+      <input type="text" required>
+
+      <label>Email Address *</label>
+      <input type="email" required>
+
+      <label>Roll Number *</label>
+      <input type="text" required>
+
+      <label>Department *</label>
+      <select required>
+        <option value="">Select Department</option>
+        <option value="cse">CSE</option>
+        <option value="ece">ECE</option>
+        <option value="it">IT</option>
+      
+      </select>
+
+      <label>Year of Study *</label>
+      <select required>
+        <option value="">Select Year</option>
+        <option>2nd</option>
+        <option>3rd</option>
+        <option>Final</option>
+      </select>
+
+      <label>Current CGPA *</label>
+      <input type="number" min="0" max="10" step="0.01" required>
+
+      <label>Password *</label>
+      <input type="password" required>
+
+      <label>Confirm Password *</label>
+      <input type="password" required>
+
+      <button type="submit">Create Account</button>
+    </form>
+  </div>
+</body>
+</html>
