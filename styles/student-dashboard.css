@@ -7,12 +7,12 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f6fa;
+  background-color: #e0f7fa; /* Matches hero section */
   color: #2d3436;
 }
 
 .navbar {
-  background-color: #1e272e;
+  background-color: #0984e3; /* Primary theme color */
   color: white;
   padding: 1rem 2rem;
   display: flex;
@@ -20,9 +20,17 @@ body {
   align-items: center;
 }
 
+.logo {
+  height: 36px;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
 .navbar h1 {
-  color: #74b9ff;
+  color: white;
   font-size: 1.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .navbar nav {
@@ -38,7 +46,8 @@ body {
 }
 
 .nav-link:hover {
-  color: #74b9ff;
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .dashboard-container {
@@ -51,7 +60,7 @@ body {
   background-color: white;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
   margin-bottom: 2rem;
 }
 
@@ -59,13 +68,14 @@ body {
   background-color: white;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
   margin-bottom: 2rem;
 }
 
 .dashboard-section h3 {
   margin-bottom: 1rem;
   color: #0984e3;
+  font-size: 1.25rem;
 }
 
 .dashboard-section table {
@@ -84,11 +94,13 @@ th, td {
 
 th {
   background-color: #f1f2f6;
+  color: #2d3436;
 }
 
 ul {
   list-style: disc;
   padding-left: 1.5rem;
+  color: #2d3436;
 }
 
 footer {

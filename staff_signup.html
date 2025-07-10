@@ -4,41 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Staff Sign Up - Placement Portal</title>
-  <link rel="stylesheet" href="staff_signup.css">
+  <link rel="stylesheet" href="styles/staff_signup.css" />
 </head>
 <body>
   <div class="signup-container">
-    <h2>Staff Sign Up</h2>
+    <div class="logo-title">
+      <img src="images/placement_logo.png" alt="Placement Logo" class="logo">
+      <h1>Placement Hub</h1>
+    </div>
+
+    <h2>Create Your Staff Account</h2>
+    
+    <hr>
+    <hr>
+    <br>
     <form class="signup-form">
       <label>Full Name *</label>
       <input type="text" required>
 
-      <label>Official Email *</label>
+      <label>Email Address *</label>
       <input type="email" required>
 
-      <label>Staff ID *</label>
+      <label>Employee ID *</label>
+      <input type="text" required>
+
+      <label>Designation *</label>
       <input type="text" required>
 
       <label>Department *</label>
       <select required>
         <option value="">Select Department</option>
-        <option value="placement">Placement Cell</option>
-        <option value="cse">CSE</option>
-        <option value="ece">ECE</option>
-        <option value="it">IT</option>
+        <option>CSE</option>
+        <option>ECE</option>
+        <option>IT</option>
+        <option>Mechanical</option>
+        <option>Civil</option>
       </select>
-
-      <label>Role *</label>
-      <select required>
-        <option value="">Select Role</option>
-        <option>Placement Coordinator</option>
-        <option>Placement Officer</option>
-        <option>Faculty Coordinator</option>
-        <option>Admin</option>
-      </select>
-
-      <label>Contact Number *</label>
-      <input type="tel" required>
 
       <label>Password *</label>
       <input type="password" required>

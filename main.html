@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Student Placement Portal</title>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
   <header>
     <div class="navbar">
-      <h1>🎓 Placement Portal</h1>
+      <h1><img src="images/placement_logo.png" class="logo" alt="placement_logo"> Placement Portal</h1>
       <nav>
         <a href="#" class="nav-link">Home</a>
         <a href="#" class="nav-link">Companies</a>
@@ -19,36 +19,58 @@
         <a href="#" class="nav-link">Dashboard</a>
       </nav>
       <div class="auth-buttons">
-        <button class="login-btn">Login</button>
-        <button class="signup-btn">Sign Up</button>
+        <div class="dropdown">
+          <button class="login-btn">Login</button>
+           <div class="dropdown-content">
+             <a href="login-student.html">Login as Student</a>
+              <a href="login-staff.html">Login as Staff</a>
+           </div>
+        </div>
+      <div class="dropdown">
+       <button class="signup-btn">Sign Up</button>
+         <div class="dropdown-content">
+        <a href="student_signup.html">Sign Up as Student</a>
+        <a href="staff_signup.html">Sign Up as Staff</a>
+         </div>
+        </div>
       </div>
     </div>
   </header>
 
   <section class="hero">
-    <div class="hero-content">
+  <div class="hero-container">
+    
+    <!-- Text Content -->
+    <div class="hero-content" style="flex: 1.5;">
       <h2>Your Gateway to Campus Placements</h2>
       <p>Manage company registrations, student profiles, match eligibility, and schedule interviews—all in one place.</p>
       <div class="hero-buttons">
         <button class="cta-btn">Get Started</button>
         <button class="secondary-btn">Learn More</button>
       </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">1000+</span>
+          <span class="stat-text">Students</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">200+</span>
+          <span class="stat-text">Companies</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">85%</span>
+          <span class="stat-text">Success Rate</span>
+        </div>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-number">1000+</span>
-        <span class="stat-text">Students</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">200+</span>
-        <span class="stat-text">Companies</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">85%</span>
-        <span class="stat-text">Success Rate</span>
-      </div>
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+     <img src="images/undraw_add-tasks_mvlb.svg" alt="Illustration">
     </div>
-  </section>
+  </div>
+</section>
+  
 
   <section class="features">
     <div class="section-title">
@@ -136,7 +158,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h3>🎓 Placement Portal</h3>
+        <h3><img src="images/placement_logo.png" class="logo">Placement Portal</h3>
         <p>Your gateway to successful campus placements</p>
       </div>
       <div class="footer-section">
