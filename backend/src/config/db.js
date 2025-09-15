@@ -1,18 +1,16 @@
-const mysql = require('mysql');
+const mongoose = require('mongoose');
 
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'your_username',
-  password: 'your_password',
-  database: 'student_placement_portal'
-});
-
-db.connect((err) => {
-  if (err) {
-    console.error('Database connection failed:', err.stack);
-    return;
+const connectDB = async () => {
+  try {
+    await mongoose.connect('mongodb://localhost:27017/student_placement_portal', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('MongoDB connected');
+  } catch (err) {
+    console.error('MongoDB connection error:', err);
+    process.exit(1);
   }
-  console.log('Connected to the database.');
-});
+};
 
-module.exports = db;
+module.exports = connectDB;

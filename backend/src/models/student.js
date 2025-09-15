@@ -1,30 +1,9 @@
-const mysql = require('mysql');
-const { promisify } = require('util');
+const mongoose = require('mongoose');
 
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'your_username',
-  password: 'your_password',
-  database: 'student_placement_portal'
-});
+const studentSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+}, { timestamps: true });
 
-db.connect((err) => {
-  if (err) throw err;
-  console.log('MySQL Connected...');
-});
-
-const query = promisify(db.query).bind(db);
-
-const Student = {
-  create: (studentData) => {
-    const sql = 'INSERT INTO students (name, email, password) VALUES (?, ?, ?)';
-    return query(sql, [studentData.name, studentData.email, studentData.password]);
-  },
-  
-  findByEmail: (email) => {
-    const sql = 'SELECT * FROM students WHERE email = ?';
-    return query(sql, [email]);
-  }
-};
-
-module.exports = Student;
+module.exports = mongoose.model('Student', studentSchema);

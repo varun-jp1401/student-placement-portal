@@ -17,7 +17,7 @@ class AuthController {
     async loginStudent(req, res) {
         const { email, password } = req.body;
         try {
-            const student = await this.StudentModel.findOne({ where: { email, password } });
+            const student = await this.StudentModel.findOne({ email, password });
             if (student) {
                 res.status(200).json({ message: 'Login successful', student });
             } else {
@@ -41,7 +41,7 @@ class AuthController {
     async loginStaff(req, res) {
         const { email, password } = req.body;
         try {
-            const staff = await this.StaffModel.findOne({ where: { email, password } });
+            const staff = await this.StaffModel.findOne({ email, password });
             if (staff) {
                 res.status(200).json({ message: 'Login successful', staff });
             } else {
@@ -53,4 +53,4 @@ class AuthController {
     }
 }
 
-export default AuthController;
+module.exports = AuthController;
