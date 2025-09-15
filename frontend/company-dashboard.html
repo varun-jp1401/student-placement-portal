@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Dashboard - Placement Hub</title>
+  <link rel="stylesheet" href="styles/company-dashboard.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1><img src="/images/placement_logo.png" class="logo" alt="Logo"> Placement Hub</h1>
+    <nav>
+      <a href="#" class="nav-link">Dashboard</a>
+      <a href="#" class="nav-link">Applications</a>
+      <a href="#" class="nav-link">Schedule</a>
+      <a href="#" class="nav-link">Profile</a>
+      <a href="#" class="nav-link" onclick="logout()">Logout</a>
+    </nav>
+  </header>
+
+  <div class="company-welcome">
+    <div class="company-info">
+      <div class="company-logo">TCS</div>
+      <div class="company-details">
+        <h2>Tata Consultancy Services</h2>
+        <p>Welcome back to your recruitment dashboard</p>
+        <span class="status-badge">Active Recruiter</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="dashboard-content">
+    <!-- Job Posting Summary -->
+    <div class="job-posting-card">
+      <div class="job-title">Software Engineer - Full Stack</div>
+      <p>Current active job posting</p>
+      <div class="job-details">
+        <div class="job-detail">
+          <span class="job-detail-label">Package</span>
+          <span class="job-detail-value">₹6.5 LPA</span>
+        </div>
+        <div class="job-detail">
+          <span class="job-detail-label">Min CGPA</span>
+          <span class="job-detail-value">7.0</span>
+        </div>
+        <div class="job-detail">
+          <span class="job-detail-label">Deadline</span>
+          <span class="job-detail-value">July 25, 2025</span>
+        </div>
+        <div class="job-detail">
+          <span class="job-detail-label">Eligible Dept.</span>
+          <span class="job-detail-value">CSE, IT</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statistics -->
+    <div class="stats-section">
+      <div class="stat-card applications">
+        <div class="stat-header">
+          <div class="stat-icon">📋</div>
+          <div class="stat-number">156</div>
+        </div>
+        <div class="stat-title">Total Applications</div>
+      </div>
+      
+      <div class="stat-card shortlisted">
+        <div class="stat-header">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-number">32</div>
+        </div>
+        <div class="stat-title">Shortlisted</div>
+      </div>
+      
+      <div class="stat-card selected">
+        <div class="stat-header">
+          <div class="stat-icon">✅</div>
+          <div class="stat-number">8</div>
+        </div>
+        <div class="stat-title">Selected</div>
+      </div>
+      
+      <div class="stat-card interviews">
+        <div class="stat-header">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-number">15</div>
+        </div>
+        <div class="stat-title">Pending Interviews</div>
+      </div>
+    </div>
+
+    <!-- Recent Applications -->
+    <div class="dashboard-section">
+      <div class="section-header">
+        <h3 class="section-title">📄 Recent Applications</h3>
+        <div class="section-actions">
+          <button class="btn btn-secondary">Filter</button>
+          <button class="btn btn-primary">Export List</button>
+        </div>
+      </div>
+      
+      <table class="applications-table">
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Department</th>
+            <th>CGPA</th>
+            <th>Applied Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="student-info">
+                <div class="student-avatar">AK</div>
+                <div class="student-details">
+                  <h4>Arjun Kumar</h4>
+                  <p>arjun.kumar@college.edu</p>
+                </div>
+              </div>
+            </td>
+            <td>CSE</td>
+            <td>8.2</td>
+            <td>July 10, 2025</td>
+            <td><span class="status-tag status-applied">Applied</span></td>
+            <td>
+              <div class="action-buttons">
+                <button class="btn btn-small btn-primary">View Profile</button>
+                <button class="btn btn-small btn-secondary">Shortlist</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="student-info">
+                <div class="student-avatar">PS</div>
+                <div class="student-details">
+                  <h4>Priya Sharma</h4>
+                  <p>priya.sharma@college.edu</p>
+                </div>
+              </div>
+            </td>
+            <td>IT</td>
+            <td>8.7</td>
+            <td>July 9, 2025</td>
+            <td><span class="status-tag status-shortlisted">Shortlisted</span></td>
+            <td>
+              <div class="action-buttons">
+                <button class="btn btn-small btn-primary">View Profile</button>
+                <button class="btn btn-small btn-secondary">Schedule</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="student-info">
+                <div class="student-avatar">RG</div>
+                <div class="student-details">
+                  <h4>Rahul Gupta</h4>
+                  <p>rahul.gupta@college.edu</p>
+                </div>
+              </div>
+            </td>
+            <td>CSE</td>
+            <td>9.1</td>
+            <td>July 8, 2025</td>
+            <td><span class="status-tag status-selected">Selected</span></td>
+            <td>
+              <div class="action-buttons">
+                <button class="btn btn-small btn-primary">View Profile</button>
+                <button class="btn btn-small btn-secondary">Offer Letter</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Interview Schedule -->
+    <div class="dashboard-section">
+      <div class="section-header">
+        <h3 class="section-title">🗓️ Upcoming Interviews</h3>
+        <div class="section-actions">
+          <button class="btn btn-primary">Schedule New</button>
+        </div>
+      </div>
+      
+      <div class="interview-schedule">
+        <div class="interview-card">
+          <div class="interview-date">July 18, 2025</div>
+          <div class="interview-time">10:00 AM - 12:00 PM</div>
+          <div class="interview-details">
+            Technical Round - 6 candidates<br>
+            Mode: Online (Teams)
+          </div>
+        </div>
+        
+        <div class="interview-card">
+          <div class="interview-date">July 20, 2025</div>
+          <div class="interview-time">2:00 PM - 4:00 PM</div>
+          <div class="interview-details">
+            HR Round - 4 candidates<br>
+            Mode: On-Campus (Room 205)
+          </div>
+        </div>
+        
+        <div class="interview-card">
+          <div class="interview-date">July 22, 2025</div>
+          <div class="interview-time">9:00 AM - 11:00 AM</div>
+          <div class="interview-details">
+            Final Round - 3 candidates<br>
+            Mode: Online (Teams)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notifications -->
+    <div class="dashboard-section">
+      <div class="section-header">
+        <h3 class="section-title">🔔 Recent Notifications</h3>
+        <div class="section-actions">
+          <button class="btn btn-secondary">Mark All Read</button>
+        </div>
+      </div>
+      
+      <div class="notifications-list">
+        <div class="notification-item">
+          <div class="notification-icon">👤</div>
+          <div class="notification-content">
+            <div class="notification-title">New Application Received</div>
+            <div class="notification-text">Sneha Patel (CSE, CGPA: 8.5) has applied for Software Engineer position</div>
+            <div class="notification-time">2 hours ago</div>
+          </div>
+        </div>
+        
+        <div class="notification-item">
+          <div class="notification-icon">📅</div>
+          <div class="notification-content">
+            <div class="notification-title">Interview Reminder</div>
+            <div class="notification-text">Technical interview scheduled for tomorrow at 10:00 AM with 6 candidates</div>
+            <div class="notification-time">1 day ago</div>
+          </div>
+        </div>
+        
+        <div class="notification-item">
+          <div class="notification-icon">✉️</div>
+          <div class="notification-content">
+            <div class="notification-title">Application Deadline Approaching</div>
+            <div class="notification-text">Only 3 days left for Software Engineer position applications (Deadline: July 25)</div>
+            <div class="notification-time">2 days ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Student Placement Hub. All rights reserved.</p>
+  </footer>
+
+  
+</body>
+</html>

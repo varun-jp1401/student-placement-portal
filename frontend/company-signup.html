@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Company Sign Up - Placement Portal</title>
+  <link rel="stylesheet" href="styles/company-signup.css" />
+</head>
+<body>
+  <div class="signup-container">
+    <div class="logo-title">
+      <img src="/images/placement_logo.png" alt="Placement Logo" class="logo">
+      <h1>Placement Hub</h1>
+    </div>
+
+    <h2>🏢 Register Your Company</h2>
+    <p class="subtitle">Join our placement portal and connect with talented students!</p>
+    
+    <form class="signup-form">
+      <div class="form-group">
+        <label>Company Name <span class="required">*</span></label>
+        <input type="text" required placeholder="Enter company name">
+      </div>
+
+      <div class="form-group">
+        <label>Industry Type <span class="required">*</span></label>
+        <select required>
+          <option value="">Select Industry</option>
+          <option value="IT">Information Technology</option>
+          <option value="finance">Finance & Banking</option>
+          <option value="consulting">Consulting</option>
+          <option value="manufacturing">Manufacturing</option>
+          <option value="healthcare">Healthcare</option>
+          <option value="retail">Retail & E-commerce</option>
+          <option value="automotive">Automotive</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Company Email <span class="required">*</span></label>
+        <input type="email" required placeholder="hr@company.com">
+      </div>
+
+      <div class="form-group">
+        <label>Contact Number <span class="required">*</span></label>
+        <input type="tel" required placeholder="+91 12345 67890">
+      </div>
+
+      <div class="form-group">
+        <label>HR Name <span class="required">*</span></label>
+        <input type="text" required placeholder="HR Manager Name">
+      </div>
+
+      <div class="form-group">
+        <label>HR Email <span class="required">*</span></label>
+        <input type="email" required placeholder="hr.manager@company.com">
+      </div>
+
+      <div class="form-group full-width">
+        <label>Company Address <span class="required">*</span></label>
+        <textarea required placeholder="Enter complete company address"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Website URL</label>
+        <input type="url" placeholder="https://www.company.com">
+      </div>
+
+      <div class="form-group">
+        <label>Company Size <span class="required">*</span></label>
+        <select required>
+          <option value="">Select Size</option>
+          <option value="startup">Startup (1-50)</option>
+          <option value="small">Small (51-200)</option>
+          <option value="medium">Medium (201-1000)</option>
+          <option value="large">Large (1000+)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Job Role <span class="required">*</span></label>
+        <input type="text" required placeholder="e.g., Software Engineer, Data Analyst">
+      </div>
+
+      <div class="form-group">
+        <label>Package Offered (CTC) <span class="required">*</span></label>
+        <input type="text" required placeholder="e.g., ₹6 LPA">
+      </div>
+
+      <div class="form-group">
+        <label>Minimum CGPA Required <span class="required">*</span></label>
+        <select required>
+          <option value="">Select CGPA</option>
+          <option value="6.0">6.0 and above</option>
+          <option value="6.5">6.5 and above</option>
+          <option value="7.0">7.0 and above</option>
+          <option value="7.5">7.5 and above</option>
+          <option value="8.0">8.0 and above</option>
+          <option value="8.5">8.5 and above</option>
+          <option value="9.0">9.0 and above</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Eligible Departments <span class="required">*</span></label>
+        <select required>
+          <option value="">Select Department</option>
+          <option value="all">All Departments</option>
+          <option value="cse">CSE Only</option>
+          <option value="ece">ECE Only</option>
+          <option value="it">IT Only</option>
+          <option value="cse,it">CSE & IT</option>
+          <option value="cse,ece">CSE & ECE</option>
+          <option value="engineering">All Engineering</option>
+        </select>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Job Description <span class="required">*</span></label>
+        <textarea required placeholder="Describe the role, responsibilities, and requirements"></textarea>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Required Skills</label>
+        <textarea placeholder="List the technical skills and technologies required (comma separated)"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Application Deadline <span class="required">*</span></label>
+        <input type="date" required>
+      </div>
+
+      <div class="form-group">
+        <label>Interview Mode <span class="required">*</span></label>
+        <select required>
+          <option value="">Select Mode</option>
+          <option value="online">Online</option>
+          <option value="offline">On-Campus</option>
+          <option value="hybrid">Hybrid</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Password <span class="required">*</span></label>
+        <input type="password" required placeholder="Create password">
+      </div>
+
+      <div class="form-group">
+        <label>Confirm Password <span class="required">*</span></label>
+        <input type="password" required placeholder="Confirm password">
+      </div>
+
+      <div class="form-group full-width">
+        <div class="checkbox-group">
+          <input type="checkbox" id="terms" required>
+          <label for="terms">I agree to the Terms of Service and Privacy Policy <span class="required">*</span></label>
+        </div>
+      </div>
+
+      <button type="submit">Register Company</button>
+    </form>
+
+    <div class="login-link">
+      Already have an account? <a href="company-login.html">Login here</a>
+    </div>
+  </div>
+
+ 
+</body>
+</html>
