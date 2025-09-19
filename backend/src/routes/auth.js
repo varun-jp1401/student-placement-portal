@@ -1,19 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const AuthController = require('../controllers/authController');
+const Student = require('../models/student');
+const Staff = require('../models/staff');
 
-const authController = new AuthController();
+// Create controller instance with models
+const authController = new AuthController(Student, Staff);
 
-// Student login route
-router.post('/login/student', authController.loginStudent);
+// Student routes
+router.post('/student/login', (req, res) => authController.loginStudent(req, res));
+router.post('/student/signup', (req, res) => authController.signupStudent(req, res));
 
-// Staff login route
-router.post('/login/staff', authController.loginStaff);
-
-// Student signup route
-router.post('/signup/student', authController.signupStudent);
-
-// Staff signup route
-router.post('/signup/staff', authController.signupStaff);
+// Staff routes  
+router.post('/staff/login', (req, res) => authController.loginStaff(req, res));
+router.post('/staff/signup', (req, res) => authController.signupStaff(req, res));
 
 module.exports = router;
