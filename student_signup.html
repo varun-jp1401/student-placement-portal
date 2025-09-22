@@ -15,7 +15,7 @@
       </div>
       <h2>🎓 Create Your Student Account</h2>
       <p class="subtext">Join the portal and get placement ready!</p>
-      <form class="signup-form">
+      <form class="signup-form" id="studentSignupForm">
         <div class="form-group">
           <label>Full Name *</label>
           <input type="text" required>
@@ -70,5 +70,37 @@
       </form>
     </div>
   </div>
+  <script>
+    document.getElementById('studentSignupForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        name: form.elements[0].value,
+        email: form.elements[1].value,
+        rollNumber: form.elements[2].value,
+        department: form.elements[3].value,
+        year: form.elements[4].value,
+        cgpa: form.elements[5].value,
+        password: form.elements[6].value,
+        confirmPassword: form.elements[7].value
+      };
+      if (data.password !== data.confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+      const res = await fetch('/api/auth/student/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await res.json();
+      if (res.ok) {
+        alert('Student registered successfully!');
+        window.location.href = 'student-dashboard.html';
+      } else {
+        alert(result.message || result.error || 'Registration failed');
+      }
+    });
+  </script>
 </body>
 </html>

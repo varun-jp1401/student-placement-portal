@@ -18,7 +18,7 @@
     <hr>
     <hr>
     <br>
-    <form class="signup-form">
+    <form class="signup-form" id="staffSignupForm">
       <label>Full Name *</label>
       <input type="text" required>
 
@@ -50,5 +50,31 @@
       <button type="submit">Create Account</button>
     </form>
   </div>
+  <script>
+      document.getElementById('staffSignupForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = {
+          name: form.querySelector('input[type="text"]').value,
+          email: form.querySelector('input[type="email"]').value,
+          employeeId: form.querySelectorAll('input[type="text"]')[1].value,
+          designation: form.querySelectorAll('input[type="text"]')[2].value,
+          department: form.querySelector('select').value,
+          password: form.querySelector('input[type="password"]').value
+        };
+        const res = await fetch('/api/auth/staff/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        if (res.ok) {
+          alert('Staff registered successfully!');
+          window.location.href = 'staff-dashboard.html';
+        } else {
+          alert(result.error || 'Registration failed');
+        }
+      });
+    </script>
 </body>
 </html>

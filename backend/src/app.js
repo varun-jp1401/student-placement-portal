@@ -48,8 +48,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Serve images at /images path
 app.use('/images', express.static(path.join(__dirname, '../../images')));
 
-// Serve static files (CSS, JS, etc.)
-app.use(express.static(path.join(__dirname, '../../frontend')));
+// Serve all static files (CSS, JS, images, HTML, etc.)
+app.use(express.static(path.join(__dirname, '../../')));
 
 // Connect to MongoDB
 connectDB();
@@ -59,7 +59,7 @@ app.use('/api/auth', authRoutes);
 
 // Serve main.html at root
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/main.html'));
+  res.sendFile(path.join(__dirname, '../../index.html'));
 });
 
 // Start the server

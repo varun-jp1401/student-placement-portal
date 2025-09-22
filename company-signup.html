@@ -16,7 +16,7 @@
     <h2>🏢 Register Your Company</h2>
     <p class="subtitle">Join our placement portal and connect with talented students!</p>
     
-    <form class="signup-form">
+    <form class="signup-form" id="companySignupForm">
       <div class="form-group">
         <label>Company Name <span class="required">*</span></label>
         <input type="text" required placeholder="Enter company name">
@@ -166,6 +166,48 @@
     </div>
   </div>
 
- 
+  <script>
+    document.getElementById('companySignupForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        name: form.elements[0].value,
+        industryType: form.elements[1].value,
+        email: form.elements[2].value,
+        contactNumber: form.elements[3].value,
+        hrName: form.elements[4].value,
+        hrEmail: form.elements[5].value,
+        address: form.elements[6].value,
+        website: form.elements[7].value,
+        size: form.elements[8].value,
+        jobRole: form.elements[9].value,
+        package: form.elements[10].value,
+        minCgpa: form.elements[11].value,
+        eligibleDepartments: form.elements[12].value,
+        jobDescription: form.elements[13].value,
+        requiredSkills: form.elements[14].value,
+        deadline: form.elements[15].value,
+        interviewMode: form.elements[16].value,
+        password: form.elements[17].value,
+        confirmPassword: form.elements[18].value
+      };
+      if (data.password !== data.confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+      const res = await fetch('/api/auth/company/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await res.json();
+      if (res.ok) {
+        alert('Company registered successfully!');
+        window.location.href = 'company-dashboard.html';
+      } else {
+        alert(result.error || 'Registration failed');
+      }
+    });
+  </script>
 </body>
 </html>
