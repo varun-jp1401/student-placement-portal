@@ -25,11 +25,11 @@
   </header>
 
   <main class="dashboard-container">
-    <section class="profile-card">
-      <h2>Welcome, John Doe</h2>
-      <p>Department: Computer Science Engineering</p>
-      <p>Year: Final Year</p>
-      <p>CGPA: 8.4</p>
+    <section class="profile-card" id="profileCard">
+      <h2 id="studentName">Welcome, John Doe</h2>
+      <p id="studentDept">Department: Computer Science Engineering</p>
+      <p id="studentYear">Year: Final Year</p>
+      <p id="studentCgpa">CGPA: 8.4</p>
     </section>
 
     <section class="dashboard-section">
@@ -80,5 +80,16 @@
   <footer>
     <p>&copy; 2025 Student Placement Hub. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Populate student info from sessionStorage
+    const user = JSON.parse(sessionStorage.getItem('user'));
+    if (user) {
+      document.getElementById('studentName').textContent = `Welcome, ${user.name}`;
+      document.getElementById('studentDept').textContent = `Department: ${user.department}`;
+      document.getElementById('studentYear').textContent = `Year: ${user.year}`;
+      document.getElementById('studentCgpa').textContent = `CGPA: ${user.cgpa}`;
+    }
+  </script>
 </body>
 </html>

@@ -57,7 +57,7 @@ class AuthController {
         const { email, password } = req.body;
         
         try {
-            const student = await this.StudentModel.findOne({ email, isActive: true });
+            const student = await this.StudentModel.findOne({ email }); // Remove isActive: true
             
             if (!student) {
                 return res.status(401).json({ message: 'Invalid email or password' });

@@ -19,7 +19,7 @@
     <h2>Student Login</h2>
     <p class="subtitle">Access your placement dashboard</p>
     
-    <div class="error-message" id="errorMessage">
+    <div class="error-message" id="errorMessage" style="display:none;">
       Invalid credentials. Please try again.
     </div>
     
@@ -53,37 +53,30 @@
   <script>
     document.getElementById('loginForm').addEventListener('submit', async (e) => {
       e.preventDefault();
-      
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
       const errorMessage = document.getElementById('errorMessage');
-      
+      errorMessage.style.display = 'none';
+
       try {
-        const response = await fetch('http://localhost:5000/api/auth/student/login', {
+        const response = await fetch('/api/auth/student/login', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password })
         });
-        
         const data = await response.json();
-        
-        if (response.ok) {
-          // Store user data in sessionStorage
+        if (response.ok && data.student) {
+          // Store user info in sessionStorage
           sessionStorage.setItem('user', JSON.stringify(data.student));
           sessionStorage.setItem('userType', 'student');
-          
-          // Redirect to dashboard
           window.location.href = 'student-dashboard.html';
         } else {
           errorMessage.style.display = 'block';
-          errorMessage.textContent = data.message || 'Login failed';
+          errorMessage.textContent = data.message || 'Invalid credentials. Please try again.';
         }
       } catch (error) {
         errorMessage.style.display = 'block';
         errorMessage.textContent = 'Network error. Please try again.';
-        console.error('Login error:', error);
       }
     });
   </script>
